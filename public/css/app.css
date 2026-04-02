@@ -1,0 +1,444 @@
+/* 
+ * Wanderlust Travel Guide - Primary Stylesheet
+ * Contains design system tokens, utility classes and custom overrides
+ * Uses Swiper.js, Lightbox2, and Leaflet styles via CDN in layout
+ */
+
+:root {
+    /* Color Palette */
+    --navy: #0B1426;
+    --navy-light: #132039;
+    --coral: #FF6B6B;
+    --amber: #F4A261;
+    --teal: #2EC4B6;
+    --cream: #FFF8F0;
+    --white: #FFFFFF;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Layout Utilities */
+.section {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.text-coral { color: var(--coral); }
+.text-amber { color: var(--amber); }
+.text-teal { color: var(--teal); }
+.text-muted { color: var(--gray-500); }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-fast);
+    outline: none;
+    font-family: var(--font-heading);
+}
+
+.btn-primary {
+    background-color: var(--coral);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    color: var(--white);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+.btn-teal {
+    background-color: var(--teal);
+    color: var(--white);
+}
+
+.btn-teal:hover {
+    background-color: #25a89c;
+    color: var(--white);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all var(--transition-normal);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background-color: rgba(11, 20, 38, 0.95);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-brand i {
+    color: var(--coral);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--coral);
+    transition: width var(--transition-fast);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-icons a {
+    color: var(--white);
+    font-size: 18px;
+}
+
+.nav-icons a:hover {
+    color: var(--coral);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    transition: border-color var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.1);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-adventure {
+    background-color: rgba(255, 107, 107, 0.1);
+    color: var(--coral);
+}
+
+.badge-culture {
+    background-color: rgba(244, 162, 97, 0.1);
+    color: var(--amber);
+}
+
+.badge-food {
+    background-color: rgba(46, 196, 182, 0.1);
+    color: var(--teal);
+}
+
+.badge-featured {
+    background-color: var(--amber);
+    color: var(--navy);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.badge-gem {
+    background-color: var(--navy);
+    color: var(--white);
+    border: 1px solid var(--amber);
+}
+
+/* Common Components */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--navy);
+}
+
+.section-subtitle {
+    color: var(--gray-500);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Custom Overrides for Hidden Gems Page (Dark Theme) */
+.dark-theme {
+    background-color: var(--navy);
+    color: var(--gray-200);
+}
+
+.dark-theme .section-title {
+    color: var(--white);
+}
+
+.dark-theme .navbar {
+    background-color: rgba(11, 20, 38, 0.95);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--navy-light);
+    color: var(--gray-300);
+    padding: 80px 0 30px;
+    margin-top: 50px;
+}
+
+/* Simple Search Bar Nav */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 20, 38, 0.95);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.search-form-wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.search-input-group {
+    position: relative;
+}
+
+.search-input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--gray-500);
+    color: var(--white);
+    font-size: 36px;
+    padding: 15px 40px 15px 0;
+    font-family: var(--font-heading);
+}
+
+.search-input-group input:focus {
+    outline: none;
+    border-color: var(--coral);
+}
+
+.search-input-group button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--coral);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-results-dropdown {
+    margin-top: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
