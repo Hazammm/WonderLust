@@ -73,5 +73,5 @@ This project relies on the Laravel framework and its ecosystem, open-sourced sof
 
 ## Contributors
 
-ASRA ARSHAD 
-HAZAM LIAQAT
+Asra Arshad
+Hazam liaqat
