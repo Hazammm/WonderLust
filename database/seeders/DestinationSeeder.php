@@ -469,19 +469,19 @@ class DestinationSeeder extends Seeder
                     [
                         'name' => 'Chapshuro',
                         'description' => 'The Hunza version of a meat pie, filled with minced beef, sheep, or yak meat, seasoned with local herbs and baked.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/hunza-chapshuro.jpg',
                         'price_range' => '300-500 PKR',
                     ],
                     [
                         'name' => 'Diram Fiti',
                         'description' => 'A sweet bread made from sprouted wheat, baked slowly, and traditionally served with almond or apricot oil.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/hunza-diram-fiti.jpg',
                         'price_range' => '200-400 PKR',
                     ],
                     [
                         'name' => 'Harissa',
                         'description' => 'A hearty and ancient dish made from wheat, meat, and oil, cooked slowly until it becomes a rich paste.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/hunza-harissa.jpg',
                         'price_range' => '400-700 PKR',
                     ]
                 ],
@@ -533,13 +533,13 @@ class DestinationSeeder extends Seeder
                     [
                         'name' => 'Lamb Karahi',
                         'description' => 'A beautifully spiced and fragrant lamb dish cooked in a wok (karahi) with tomatoes, ginger, and green chilies.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/swat-lamb-karahi.jpg',
                         'price_range' => '1500-2500 PKR',
                     ],
                     [
                         'name' => 'Chapli Kebab',
                         'description' => 'A flat and round minced meat patty, spiced heavily with local ingredients and deep-fried to perfection.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/swat-chapli-kebab.jpg',
                         'price_range' => '300-600 PKR',
                     ]
                 ],
@@ -583,19 +583,19 @@ class DestinationSeeder extends Seeder
                     [
                         'name' => 'Mamtu',
                         'description' => 'Steamed dumplings filled with minced meat, onions, and herbs, a popular snack across Gilgit-Baltistan.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/gilgit-mamtu.jpg',
                         'price_range' => '400-700 PKR',
                     ],
                     [
                         'name' => 'Skardu Trout',
                         'description' => 'Fresh river trout caught directly from the icy mountain streams, lightly fried or grilled with mild seasoning.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/gilgit-trout.jpg',
                         'price_range' => '1000-2000 PKR',
                     ],
                     [
                         'name' => 'Marzan',
                         'description' => 'A traditional dish made with buckwheat flour dough served with apricot oil, usually prepared for special occasions.',
-                        'image' => 'images/food/default.jpg',
+                        'image' => 'images/food/gilgit-marzan.jpg',
                         'price_range' => '500-900 PKR',
                     ]
                 ],
