@@ -24,6 +24,7 @@ Wanderlust Guides is a responsive, feature-rich travel guide application built w
 - Composer
 - Node.js & npm
 - MySQL or other supported database
+- MySQL is perferred for this project 
 
 ## Installation Setup
 
