@@ -70,7 +70,7 @@ Wanderlust Guides is a responsive, feature-rich travel guide application built w
 
 ## License
 
-This project relies on the Laravel framework and its ecosystem, open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project relies on the Laravel framework and its ecosystem, open-sourced software licensed under [MIT license](https://opensource.org/licenses/MIT).
 
 ## Contributors
 
