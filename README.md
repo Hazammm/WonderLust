@@ -6,7 +6,7 @@ Wanderlust Guides is a responsive, feature-rich travel guide application built w
 
 - **Explore Destinations:** Browse a comprehensive directory of travel locations categorized by different interests.
 - **Rich Media Galleries:** Every destination includes a carefully curated 3-image gallery to showcase authentic photography.
-- **Culinary & Food Guides:** Dedicated sections for food-focused destinations featuring famous local dishes and recommended restaurant cards.
+- **Culinary & Food Guides:** Dedicated sections for food-focused destinations featuring famous local and international dishes with recommended restaurant cards.
 - **Search & Filtering:** Robust functionality for finding specific destinations quickly and easily.
 - **Newsletter Subscription:** Allows users to subscribe and stay updated with the latest travel guides and news.
 - **Administrative CMS:** Secure backend administration interface for managing destinations, categories, and site content.
